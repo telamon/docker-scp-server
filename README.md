@@ -1,5 +1,8 @@
 # docker-scp-server
 
+EDIT: added rsync support, crippled host-key setup. 
+
+
 Restricted SSH server which allows SCP / SFTP access only.
 
 ## Running

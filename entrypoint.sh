@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# This won't be executed if keys already exist (i.e. from a volume)
-ssh-keygen -A
+# This won't be executed if keys already exist (i.e. from a volume) but only if env REGENERATE is set
+if [ ! -z "$REGENERATE" ]; then
+	ssh-keygen -A
+fi
 
 # Copy authorized keys from ENV variable
 echo $AUTHORIZED_KEYS | base64 -d >>$AUTHORIZED_KEYS_FILE
